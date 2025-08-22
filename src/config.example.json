@@ -6,12 +6,12 @@
     "service_id": "YOUR_SERVICE_ID"
   },
   "email": {
-    "smtp_host": "smtp.gmail.com",
+    "smtp_host": "smtp.office365.com",
     "smtp_port": 587,
-    "username": "din@gmail.com",
-    "password": "app-losenord",
-    "from": "Waxholms Hotell <din@gmail.com>",
-    "internal_alert_to": ["drift@waxholmshotell.se"]
+    "username": "dinadress@dindoman.se",
+    "password": "app-losen",
+    "from": "Waxholms Hotell <dinadress@dindoman.se>",
+    "internal_alert_to": ["drift@dindoman.se"]
   },
   "reviews": {
     "domain": "http://127.0.0.1:8000",

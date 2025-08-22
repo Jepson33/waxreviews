@@ -1,7 +1,7 @@
 from __future__ import annotations
-import csv, json, os, time
+import csv, json
 from pathlib import Path
-from typing import Dict, Any, List, Optional
+from typing import Dict, Any, List
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
@@ -12,11 +12,12 @@ SENT = DATA / "sent.csv"
 FEEDBACK = DATA / "feedback.csv"
 
 def read_config() -> Dict[str, Any]:
-    cfg_path = Path(__file__).resolve().parent / "config.json"
-    if not cfg_path.exists():
-        # fall back to example for dev
-        cfg_path = Path(__file__).resolve().parent / "config.example.json"
-    return json.loads(cfg_path.read_text(encoding="utf-8"))
+    # Leta först efter riktig config.json. Falla tillbaka till example om den saknas.
+    real = Path(__file__).resolve().parent / "config.json"
+    if real.exists():
+        return json.loads(real.read_text(encoding="utf-8"))
+    ex = Path(__file__).resolve().parent / "config.example.json"
+    return json.loads(ex.read_text(encoding="utf-8"))
 
 def load_pending() -> List[Dict[str, Any]]:
     if not PENDING.exists():
@@ -47,5 +48,5 @@ def append_feedback(row: Dict[str, Any]) -> None:
         w.writerow(row)
 
 def now_ts() -> int:
+    import time
     return int(time.time())
-

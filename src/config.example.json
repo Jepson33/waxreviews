@@ -1,0 +1,28 @@
+{
+  "mews": {
+    "base_url": "https://api.mews.com",
+    "client_token": "YOUR_CLIENT_TOKEN",
+    "access_token": "YOUR_ACCESS_TOKEN",
+    "service_id": "YOUR_SERVICE_ID"
+  },
+  "email": {
+    "smtp_host": "smtp.gmail.com",
+    "smtp_port": 587,
+    "username": "din@gmail.com",
+    "password": "app-losenord",
+    "from": "Waxholms Hotell <din@gmail.com>",
+    "internal_alert_to": ["drift@waxholmshotell.se"]
+  },
+  "reviews": {
+    "domain": "http://127.0.0.1:8000",
+    "hmac_secret": "byt-denna",
+    "delay_hours": 24,
+    "links": {
+      "google": "https://g.page/r/YOUR_GOOGLE_LINK",
+      "tripadvisor": "https://www.tripadvisor.com/UserReviewEdit-g..."
+    }
+  },
+  "flags": {
+    "use_mock_mews": true
+  }
+}

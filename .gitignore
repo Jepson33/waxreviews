@@ -1,0 +1,23 @@
+# Ignorera config med känsliga nycklar
+config.json
+
+# Ignorera lokala databaser och cache
+*.db
+*.sqlite
+__pycache__/
+*.pyc
+
+# Ignorera datafiler och loggar
+data/
+logs/
+*.log
+
+# Ignorera virtuella miljöer
+.venv/
+venv/
+ENV/
+env/
+
+# Ignorera OS-specifika filer
+.DS_Store
+Thumbs.db

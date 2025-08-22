@@ -1,1 +1,18 @@
+<!doctype html>
+<html>
+  <body style="font-family: Arial, sans-serif; color:#111; line-height:1.5;">
+    <div style="max-width:680px; margin:0 auto;">
+      <h2>Hej {{ first_name }}. Tack för din vistelse på Waxholms Hotell</h2>
+      <p>Vi vill gärna veta hur din upplevelse var. Välj ett betyg.</p>
+      <p>
+        {% for s in [1,2,3,4,5] %}
+          <a href="{{ links[s] }}" style="display:inline-block; padding:8px 10px; border:1px solid #ddd; margin:2px; text-decoration:none;">
+            ⭐ {{ s }}
+          </a>
+        {% endfor %}
+      </p>
+      <p>Stort tack för att du hjälper oss bli bättre.</p>
+    </div>
+  </body>
+</html>
 

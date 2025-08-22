@@ -1,15 +1,18 @@
 from __future__ import annotations
 from datetime import datetime, timedelta, timezone
-import hmac, hashlib, json, uuid
+import hmac, hashlib, uuid
 from typing import Dict, Any, List
+
 from .storage import load_pending, save_pending, append_sent, now_ts, read_config
 from .mews_client import get_checkouts_between
 
 def enqueue_yesterdays_checkouts() -> int:
     cfg = read_config()
     delay_hours = int(cfg["reviews"].get("delay_hours", 24))
-    start = datetime.now(timezone.utc) - timedelta(days=1, hours=12)
-    end = datetime.now(timezone.utc) - timedelta(hours=12)
+
+    # Vi definierar "igår" brett, för att mocken ska träffa.
+    start = datetime.now(timezone.utc) - timedelta(days=2)
+    end = datetime.now(timezone.utc) - timedelta(hours=1)
 
     guests = get_checkouts_between(start, end)
     pending = load_pending()

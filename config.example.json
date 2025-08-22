@@ -1,1 +1,26 @@
+{
+  "mews": {
+    "base_url": "https://api.mews.com",
+    "client_token": "xxx",
+    "access_token": "yyy",
+    "service_id": "zzz"
+  },
+  "email": {
+    "smtp_host": "smtp.gmail.com",
+    "smtp_port": 587,
+    "username": "din@gmail.com",
+    "password": "app-losen",
+    "from": "Waxholms Hotell <din@gmail.com>"
+  },
+  "reviews": {
+    "domain": "https://reviews.waxholmshotell.se",
+    "hmac_secret": "byts-sen",
+    "links": {
+      "google": "https://g.page/r/...",
+      "tripadvisor": "https://www.tripadvisor.com/UserReviewEdit-g..."
+    },
+    "delay_hours": 24,
+    "skip_business_guests": true
+  }
+}
 

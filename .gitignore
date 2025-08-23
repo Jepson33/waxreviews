@@ -1,5 +1,6 @@
 # Ignorera config med känsliga nycklar
 config.json
+config.example.json
 
 # Ignorera lokala databaser och cache
 *.db
